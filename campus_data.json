@@ -1,0 +1,1047 @@
+{
+  "reportId": 91,
+  "statusCode": "REP1000",
+  "name": "Main consumption",
+  "resolution": 3,
+  "startDate": "8/1/2025 12:00:00 AM",
+  "endDate": "8/1/2026 12:00:00 AM",
+  "objectType": "NODE",
+  "objectId": 3474371,
+  "nodeId": 3474371,
+  "locationCoreId": null,
+  "views": [
+    {
+      "viewId": 157,
+      "templateViewName": "Main",
+      "columnCount": 5,
+      "rowCount": 12,
+      "intentId": null,
+      "intent": null,
+      "columns": [
+        {
+          "id": 1,
+          "unit": "",
+          "sourceId": 1,
+          "metaData": {
+            "dataType": "date",
+            "outputType": 6,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "Date",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "string",
+              "value": "Sum"
+            },
+            {
+              "dataType": "string",
+              "value": "Average"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "unit": "kWh",
+          "sourceId": 18,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "Energy_Total",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": 1961512.84
+            },
+            {
+              "dataType": "float",
+              "value": 163459.4
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "unit": "kWh",
+          "sourceId": 14,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "FuelsDH_Total",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": 43243.84
+            },
+            {
+              "dataType": "float",
+              "value": 3603.65
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "unit": "kWh",
+          "sourceId": 7,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "EL_Total",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": 1918269.0
+            },
+            {
+              "dataType": "float",
+              "value": 159855.75
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "unit": "m³",
+          "sourceId": 16,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "UtilityWater",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": 1410406.0
+            },
+            {
+              "dataType": "float",
+              "value": 117533.83
+            }
+          ]
+        }
+      ],
+      "data": [
+        [
+          "08/01/2025 12:00:00 AM",
+          "09/01/2025 12:00:00 AM",
+          "10/01/2025 12:00:00 AM",
+          "11/01/2025 12:00:00 AM",
+          "12/01/2025 12:00:00 AM",
+          "01/01/2026 12:00:00 AM",
+          "02/01/2026 12:00:00 AM",
+          "03/01/2026 12:00:00 AM",
+          "04/01/2026 12:00:00 AM",
+          "05/01/2026 12:00:00 AM",
+          "06/01/2026 12:00:00 AM",
+          "07/01/2026 12:00:00 AM"
+        ],
+        [
+          140124.22,
+          133855.1,
+          178123.69,
+          183765.33,
+          191794.49,
+          192678.02,
+          187706.64,
+          187419.93,
+          157391.67,
+          144939.9,
+          135815.14,
+          127898.71
+        ],
+        [
+          1932.22,
+          2637.1,
+          5090.69,
+          3822.33,
+          4136.9,
+          3342.61,
+          5171.64,
+          4998.93,
+          3867.67,
+          2620.9,
+          3249.14,
+          2373.71
+        ],
+        [
+          138192.0,
+          131218.0,
+          173033.0,
+          179943.0,
+          187657.59,
+          189335.41,
+          182535.0,
+          182421.0,
+          153524.0,
+          142319.0,
+          132566.0,
+          125525.0
+        ],
+        [
+          103394.0,
+          95392.0,
+          177090.0,
+          150628.0,
+          111950.72,
+          123739.28,
+          122086.0,
+          140900.0,
+          115690.0,
+          87600.0,
+          97264.0,
+          84672.0
+        ]
+      ],
+      "budgetCurves": null
+    },
+    {
+      "viewId": 158,
+      "templateViewName": "FuelsDH",
+      "columnCount": 3,
+      "rowCount": 12,
+      "intentId": null,
+      "intent": null,
+      "columns": [
+        {
+          "id": 1,
+          "unit": "",
+          "sourceId": 1,
+          "metaData": {
+            "dataType": "date",
+            "outputType": 6,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "Date",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "string",
+              "value": "Sum"
+            },
+            {
+              "dataType": "string",
+              "value": "Average"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "unit": "kWh",
+          "sourceId": 36,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "FuelsDH_Total",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": 43243.84
+            },
+            {
+              "dataType": "float",
+              "value": 3603.65
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "unit": "kWh",
+          "sourceId": 9,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "Gas",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": 18,
+                "intent": "valuetype"
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": 43243.84
+            },
+            {
+              "dataType": "float",
+              "value": 3603.65
+            }
+          ]
+        }
+      ],
+      "data": [
+        [
+          "08/01/2025 12:00:00 AM",
+          "09/01/2025 12:00:00 AM",
+          "10/01/2025 12:00:00 AM",
+          "11/01/2025 12:00:00 AM",
+          "12/01/2025 12:00:00 AM",
+          "01/01/2026 12:00:00 AM",
+          "02/01/2026 12:00:00 AM",
+          "03/01/2026 12:00:00 AM",
+          "04/01/2026 12:00:00 AM",
+          "05/01/2026 12:00:00 AM",
+          "06/01/2026 12:00:00 AM",
+          "07/01/2026 12:00:00 AM"
+        ],
+        [
+          1932.22,
+          2637.1,
+          5090.69,
+          3822.33,
+          4136.9,
+          3342.61,
+          5171.64,
+          4998.93,
+          3867.67,
+          2620.9,
+          3249.14,
+          2373.71
+        ],
+        [
+          1932.22,
+          2637.1,
+          5090.69,
+          3822.33,
+          4136.9,
+          3342.61,
+          5171.64,
+          4998.93,
+          3867.67,
+          2620.9,
+          3249.14,
+          2373.71
+        ]
+      ],
+      "budgetCurves": null
+    },
+    {
+      "viewId": 159,
+      "templateViewName": "Electricity",
+      "columnCount": 4,
+      "rowCount": 12,
+      "intentId": null,
+      "intent": null,
+      "columns": [
+        {
+          "id": 1,
+          "unit": "",
+          "sourceId": 1,
+          "metaData": {
+            "dataType": "date",
+            "outputType": 6,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "Date",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "string",
+              "value": "Sum"
+            },
+            {
+              "dataType": "string",
+              "value": "Average"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "unit": "kWh",
+          "sourceId": 79,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "EL_Total",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": 1918269.0
+            },
+            {
+              "dataType": "float",
+              "value": 159855.75
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "unit": "kWh",
+          "sourceId": 5,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "EL_Single",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": 13,
+                "intent": "valuetype"
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": 1918269.0
+            },
+            {
+              "dataType": "float",
+              "value": 159855.75
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "unit": "kW",
+          "sourceId": 26,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "Demand",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": 10,
+                "intent": "valuetype"
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": null
+            },
+            {
+              "dataType": "float",
+              "value": 39963.94
+            }
+          ]
+        }
+      ],
+      "data": [
+        [
+          "08/01/2025 12:00:00 AM",
+          "09/01/2025 12:00:00 AM",
+          "10/01/2025 12:00:00 AM",
+          "11/01/2025 12:00:00 AM",
+          "12/01/2025 12:00:00 AM",
+          "01/01/2026 12:00:00 AM",
+          "02/01/2026 12:00:00 AM",
+          "03/01/2026 12:00:00 AM",
+          "04/01/2026 12:00:00 AM",
+          "05/01/2026 12:00:00 AM",
+          "06/01/2026 12:00:00 AM",
+          "07/01/2026 12:00:00 AM"
+        ],
+        [
+          138192.0,
+          131218.0,
+          173033.0,
+          179943.0,
+          187657.59,
+          189335.41,
+          182535.0,
+          182421.0,
+          153524.0,
+          142319.0,
+          132566.0,
+          125525.0
+        ],
+        [
+          138192.0,
+          131218.0,
+          173033.0,
+          179943.0,
+          187657.59,
+          189335.41,
+          182535.0,
+          182421.0,
+          153524.0,
+          142319.0,
+          132566.0,
+          125525.0
+        ],
+        [
+          34548.0,
+          32804.5,
+          43258.25,
+          44985.75,
+          46914.4,
+          47333.85,
+          45633.75,
+          45605.25,
+          38381.0,
+          35579.75,
+          33141.5,
+          31381.25
+        ]
+      ],
+      "budgetCurves": null
+    },
+    {
+      "viewId": 160,
+      "templateViewName": "Water",
+      "columnCount": 3,
+      "rowCount": 12,
+      "intentId": null,
+      "intent": null,
+      "columns": [
+        {
+          "id": 1,
+          "unit": "",
+          "sourceId": 1,
+          "metaData": {
+            "dataType": "date",
+            "outputType": 6,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "Date",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "string",
+              "value": "Sum"
+            },
+            {
+              "dataType": "string",
+              "value": "Average"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "unit": "m³",
+          "sourceId": 16,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "UtilityWater",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": 1410406.0
+            },
+            {
+              "dataType": "float",
+              "value": 117533.83
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "unit": "m³",
+          "sourceId": 43,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "Water",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": 16,
+                "intent": "valuetype"
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": 1410406.0
+            },
+            {
+              "dataType": "float",
+              "value": 117533.83
+            }
+          ]
+        }
+      ],
+      "data": [
+        [
+          "08/01/2025 12:00:00 AM",
+          "09/01/2025 12:00:00 AM",
+          "10/01/2025 12:00:00 AM",
+          "11/01/2025 12:00:00 AM",
+          "12/01/2025 12:00:00 AM",
+          "01/01/2026 12:00:00 AM",
+          "02/01/2026 12:00:00 AM",
+          "03/01/2026 12:00:00 AM",
+          "04/01/2026 12:00:00 AM",
+          "05/01/2026 12:00:00 AM",
+          "06/01/2026 12:00:00 AM",
+          "07/01/2026 12:00:00 AM"
+        ],
+        [
+          103394.0,
+          95392.0,
+          177090.0,
+          150628.0,
+          111950.72,
+          123739.28,
+          122086.0,
+          140900.0,
+          115690.0,
+          87600.0,
+          97264.0,
+          84672.0
+        ],
+        [
+          103394.0,
+          95392.0,
+          177090.0,
+          150628.0,
+          111950.72,
+          123739.28,
+          122086.0,
+          140900.0,
+          115690.0,
+          87600.0,
+          97264.0,
+          84672.0
+        ]
+      ],
+      "budgetCurves": null
+    },
+    {
+      "viewId": 191,
+      "templateViewName": "PI",
+      "columnCount": 6,
+      "rowCount": 12,
+      "intentId": null,
+      "intent": null,
+      "columns": [
+        {
+          "id": 1,
+          "unit": "",
+          "sourceId": 1,
+          "metaData": {
+            "dataType": "date",
+            "outputType": 6,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "Date",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "string",
+              "value": "Sum"
+            },
+            {
+              "dataType": "string",
+              "value": "Average"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "unit": "m²",
+          "sourceId": 124,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "Size",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 4,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": null
+            },
+            {
+              "dataType": "float",
+              "value": 15559.0
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "unit": "kWh/m²",
+          "sourceId": 136,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "Energy_Total_m2_NC",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": null
+            },
+            {
+              "dataType": "float",
+              "value": 10.51
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "unit": "kWh/m²",
+          "sourceId": 137,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "FuelsDH_Total_m2_NC",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": null
+            },
+            {
+              "dataType": "float",
+              "value": 0.23
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "unit": "kWh/m²",
+          "sourceId": 135,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "EL_Total_m2_NC",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": null
+            },
+            {
+              "dataType": "float",
+              "value": 10.27
+            }
+          ]
+        },
+        {
+          "id": 6,
+          "unit": "m³/m²",
+          "sourceId": 140,
+          "metaData": {
+            "dataType": "float",
+            "outputType": 7,
+            "intentId": null,
+            "intent": null
+          },
+          "headers": [
+            {
+              "name": "UtilityWater_m2_NC",
+              "metaHeader": {
+                "dataType": "string",
+                "outputType": 10,
+                "intentId": null,
+                "intent": null
+              }
+            }
+          ],
+          "aggregates": [
+            {
+              "dataType": "float",
+              "value": null
+            },
+            {
+              "dataType": "float",
+              "value": 7.55407
+            }
+          ]
+        }
+      ],
+      "data": [
+        [
+          "08/01/2025 12:00:00 AM",
+          "09/01/2025 12:00:00 AM",
+          "10/01/2025 12:00:00 AM",
+          "11/01/2025 12:00:00 AM",
+          "12/01/2025 12:00:00 AM",
+          "01/01/2026 12:00:00 AM",
+          "02/01/2026 12:00:00 AM",
+          "03/01/2026 12:00:00 AM",
+          "04/01/2026 12:00:00 AM",
+          "05/01/2026 12:00:00 AM",
+          "06/01/2026 12:00:00 AM",
+          "07/01/2026 12:00:00 AM"
+        ],
+        [
+          15559.0,
+          15559.0,
+          15559.0,
+          15559.0,
+          15559.0,
+          15559.0,
+          15559.0,
+          15559.0,
+          15559.0,
+          15559.0,
+          15559.0,
+          15559.0
+        ],
+        [
+          9.01,
+          8.6,
+          11.45,
+          11.81,
+          12.33,
+          12.38,
+          12.06,
+          12.05,
+          10.12,
+          9.32,
+          8.73,
+          8.22
+        ],
+        [
+          0.12,
+          0.17,
+          0.33,
+          0.25,
+          0.27,
+          0.21,
+          0.33,
+          0.32,
+          0.25,
+          0.17,
+          0.21,
+          0.15
+        ],
+        [
+          8.88,
+          8.43,
+          11.12,
+          11.57,
+          12.06,
+          12.17,
+          11.73,
+          11.72,
+          9.87,
+          9.15,
+          8.52,
+          8.07
+        ],
+        [
+          6.64529,
+          6.13099,
+          11.38184,
+          9.68108,
+          7.19524,
+          7.95291,
+          7.84665,
+          9.05585,
+          7.43557,
+          5.63018,
+          6.2513,
+          5.44199
+        ]
+      ],
+      "budgetCurves": null
+    }
+  ],
+  "nodeName": "Docklands Campus",
+  "objectName": "Docklands Campus"
+}

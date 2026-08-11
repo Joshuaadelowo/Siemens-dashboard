@@ -1,0 +1,7 @@
+pygame
+
+# Only needed for the legacy fetch/prototype scripts (databuilder.py, testgraph*.py),
+# not for the game itself (constants.py / data_loader.py / scoring.py / game.py).
+requests
+matplotlib
+numpy
