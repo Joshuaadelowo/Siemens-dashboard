@@ -3,77 +3,84 @@ from enum import Enum
 
 from data_loader import MonthlyRecord
 
-TOKENS_PER_GAME = 12
-UPGRADE_SCORE_BONUS = 10
-BELOW_AVERAGE_SCORE_BONUS = 15
-ABOVE_AVERAGE_SCORE_PENALTY = 5
-
-Building = Enum("Building", ["POWER_PLANT", "BOILER", "WATER_TOWER"])
+MONTHS_PER_GAME = 12
+GUESS_ROUNDS = MONTHS_PER_GAME - 1
+MAX_TURN_SCORE = 100
 
 
 @dataclass
 class TurnResult:
-    record: MonthlyRecord
-    average_carbon_tonnes: float
-    beat_average: bool
-    upgraded_building: Building | None
+    reference_record: MonthlyRecord
+    target_record: MonthlyRecord
+    guess: float
+    actual: float
+    error: float
     score_delta: int
     running_score: int
 
 
 class Rating(Enum):
     NEEDS_IMPROVEMENT = "Needs Improvement"
-    BRONZE = "Bronze Campus"
-    SILVER = "Silver Campus"
-    GOLD = "Gold Campus"
+    BRONZE = "Bronze Forecaster"
+    SILVER = "Silver Forecaster"
+    GOLD = "Gold Forecaster"
 
 
-def average_carbon_tonnes(records: list[MonthlyRecord]) -> float:
-    return sum(r.carbon_tonnes for r in records) / len(records)
+def carbon_span(records: list[MonthlyRecord]) -> float:
+    values = [r.carbon_tonnes for r in records]
+    return max(values) - min(values)
 
 
 class GameState:
-    """Pure, headless-testable turn/score tracker for a 12-month run."""
+    """Pure, headless-testable turn/score tracker for an 11-round carbon-guessing game.
+
+    Each round shows the player one month's carbon footprint (the "reference")
+    and asks them to guess the next month's ("target"). Score per round is
+    scaled by how close the guess lands relative to the dataset's own carbon
+    range, so a wildly wrong guess on a low-variance dataset still costs you.
+    """
 
     def __init__(self, records: list[MonthlyRecord]):
-        if len(records) != TOKENS_PER_GAME:
-            raise ValueError(f"Expected {TOKENS_PER_GAME} monthly records, got {len(records)}")
+        if len(records) != MONTHS_PER_GAME:
+            raise ValueError(f"Expected {MONTHS_PER_GAME} monthly records, got {len(records)}")
         self.records = records
-        self.average = average_carbon_tonnes(records)
+        self.span = carbon_span(records)
         self.turn_index = 0
         self.score = 0
-        self.upgrades: dict[Building, int] = {b: 0 for b in Building}
         self.history: list[TurnResult] = []
 
     @property
     def is_finished(self) -> bool:
-        return self.turn_index >= len(self.records)
+        return self.turn_index >= GUESS_ROUNDS
 
     @property
-    def current_record(self) -> MonthlyRecord:
+    def reference_record(self) -> MonthlyRecord:
         return self.records[self.turn_index]
 
-    def advance_turn(self, upgrade_building: Building | None = None) -> TurnResult:
+    @property
+    def target_record(self) -> MonthlyRecord:
+        return self.records[self.turn_index + 1]
+
+    def advance_turn(self, guess: float) -> TurnResult:
         if self.is_finished:
             raise RuntimeError("Game already finished; no more turns to advance.")
 
-        record = self.current_record
-        beat_average = record.carbon_tonnes <= self.average
+        reference = self.reference_record
+        target = self.target_record
+        actual = target.carbon_tonnes
+        error = abs(guess - actual)
+        score_delta = round(max(0.0, MAX_TURN_SCORE * (1 - error / self.span))) if self.span else MAX_TURN_SCORE
 
-        delta = BELOW_AVERAGE_SCORE_BONUS if beat_average else -ABOVE_AVERAGE_SCORE_PENALTY
-        if upgrade_building is not None:
-            self.upgrades[upgrade_building] += 1
-            delta += UPGRADE_SCORE_BONUS
-
-        self.score += delta
+        self.score += score_delta
         self.turn_index += 1
 
         result = TurnResult(
-            record=record,
-            average_carbon_tonnes=self.average,
-            beat_average=beat_average,
-            upgraded_building=upgrade_building,
-            score_delta=delta,
+            reference_record=reference,
+            target_record=target,
+            guess=guess,
+            actual=actual,
+            error=error,
+            score_delta=score_delta,
             running_score=self.score,
         )
         self.history.append(result)
@@ -82,11 +89,11 @@ class GameState:
     def final_rating(self) -> Rating:
         if not self.is_finished:
             raise RuntimeError("Game not finished yet.")
-        months_below_average = sum(1 for r in self.history if r.beat_average)
-        if months_below_average >= 9:
+        average_score = self.score / len(self.history)
+        if average_score >= 80:
             return Rating.GOLD
-        if months_below_average >= 7:
+        if average_score >= 60:
             return Rating.SILVER
-        if months_below_average >= 5:
+        if average_score >= 40:
             return Rating.BRONZE
         return Rating.NEEDS_IMPROVEMENT

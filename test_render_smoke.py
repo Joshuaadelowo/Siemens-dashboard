@@ -1,4 +1,4 @@
-"""Headless render check: draws every turn to an offscreen surface via SDL's
+"""Headless render check: draws every round to an offscreen surface via SDL's
 dummy video driver, so this runs without a real display (e.g. in CI)."""
 
 import os
@@ -9,8 +9,8 @@ os.environ.setdefault("SDL_AUDIODRIVER", "dummy")
 
 import pygame
 
-from data_loader import compute_ranges, load_monthly_records
-from scoring import Building, GameState
+from data_loader import load_monthly_records
+from scoring import GUESS_ROUNDS, GameState
 
 
 def assert_not_blank(surface):
@@ -41,19 +41,22 @@ class TestRenderSmoke(unittest.TestCase):
     def tearDownClass(cls):
         pygame.quit()
 
-    def test_draws_all_twelve_turns_without_crashing(self):
+    def test_draws_all_rounds_without_crashing(self):
         import game
 
         records = load_monthly_records()
-        ranges = compute_ranges(records)
         state = GameState(records)
+        slider_range = game.padded_carbon_range(records)
         surface = pygame.Surface(game.WINDOW_SIZE)
 
-        selections = [None, Building.POWER_PLANT, Building.BOILER, Building.WATER_TOWER] * 3
-        for selected in selections:
-            game.draw_frame(surface, self.fonts, ranges, state, selected)
+        for _ in range(GUESS_ROUNDS):
+            guess_value = state.reference_record.carbon_tonnes
+            game.draw_frame(surface, self.fonts, state, slider_range, guess_value, None)
             assert_not_blank(surface)
-            state.advance_turn(upgrade_building=selected)
+
+            result = state.advance_turn(guess_value)
+            game.draw_frame(surface, self.fonts, state, slider_range, guess_value, result)
+            assert_not_blank(surface)
 
         self.assertTrue(state.is_finished)
 
@@ -62,11 +65,12 @@ class TestRenderSmoke(unittest.TestCase):
 
         records = load_monthly_records()
         state = GameState(records)
-        for _ in range(12):
-            state.advance_turn()
+        for _ in range(GUESS_ROUNDS):
+            state.advance_turn(state.reference_record.carbon_tonnes)
 
         surface = pygame.Surface(game.WINDOW_SIZE)
-        game.draw_frame(surface, self.fonts, {}, state, None)
+        slider_range = game.padded_carbon_range(records)
+        game.draw_frame(surface, self.fonts, state, slider_range, 0.0, None)
         assert_not_blank(surface)
 
 
